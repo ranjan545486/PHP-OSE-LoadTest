@@ -33,6 +33,9 @@ $time_end = microtime_float();
 
 # sleep(2); # Sleep for 2 seconds before returning
 $e_time = $time_end - $time_st;
+$hostname = gethostname();
+echo "<h2>Server/Host name: $hostname</h2>";
+echo "<h2>Server/Host IP: $_SERVER['SERVER_ADDR']</h2>";
 echo "<h2>Elapsed time: $e_time (Seconds)</h2>";
 ?>   
 
