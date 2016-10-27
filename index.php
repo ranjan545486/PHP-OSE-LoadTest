@@ -37,6 +37,7 @@ $hostname = gethostname();
 $hostip = $_SERVER['SERVER_ADDR'];
 echo "<h2>Server/Host name: $hostname</h2>";
 echo "<h2>Server/Host IP: $hostip</h2>";
+echo "<h3>This is just a test!!</h3>";
 echo "<h2>Elapsed time: $e_time (Seconds)</h2>";
 ?>   
 
