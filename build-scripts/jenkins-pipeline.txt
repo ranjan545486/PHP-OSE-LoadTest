@@ -1,0 +1,7 @@
+node('maven') {
+stage 'build'
+openshiftBuild(buildConfig: 'auto-scale', showBuildLogs: 'true')
+stage 'deploy'
+openshiftDeploy(deploymentConfig: 'auto-scale')
+openshiftScale(deploymentConfig: 'auto-scale',replicaCount: '1')
+}
