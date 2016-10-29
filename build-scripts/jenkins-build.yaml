@@ -4,13 +4,12 @@ items:
   kind: BuildConfig
   metadata:
     annotations:
-      openshift.io/generated-by: OpenShiftWebConsole
+      pipeline.alpha.openshift.io/uses: '[{"name": "auto-scale", "namespace": "", "kind": "DeploymentConfig"}]'
     creationTimestamp: 2016-10-28T01:16:12Z
     labels:
       app: auto-scale
     name: auto-scale
     namespace: test-jenkins
-    resourceVersion: "1674012"
     selfLink: /oapi/v1/namespaces/test-jenkins/buildconfigs/auto-scale
     uid: 1dceeae4-9cac-11e6-aaf3-fa163e01bb5f
   spec:
@@ -41,8 +40,6 @@ items:
     - github:
         secret: 9ea47c4e4b2d2c5e
       type: GitHub
-  status:
-    lastVersion: 0
 - apiVersion: v1
   kind: ImageStream
   metadata:
@@ -54,12 +51,9 @@ items:
       app: auto-scale
     name: auto-scale
     namespace: test-jenkins
-    resourceVersion: "1674013"
     selfLink: /oapi/v1/namespaces/test-jenkins/imagestreams/auto-scale
     uid: 1dcf313c-9cac-11e6-aaf3-fa163e01bb5f
   spec: {}
-  status:
-    dockerImageRepository: 172.30.90.223:5000/test-jenkins/auto-scale
 - apiVersion: v1
   kind: DeploymentConfig
   metadata:
@@ -71,7 +65,6 @@ items:
       app: auto-scale
     name: auto-scale
     namespace: test-jenkins
-    resourceVersion: "1674015"
     selfLink: /oapi/v1/namespaces/test-jenkins/deploymentconfigs/auto-scale
     uid: 1dcecd2c-9cac-11e6-aaf3-fa163e01bb5f
   spec:
@@ -109,8 +102,6 @@ items:
         terminationGracePeriodSeconds: 30
     test: false
     triggers: []
-  status:
-    observedGeneration: 1
 - apiVersion: v1
   kind: Route
   metadata:
@@ -122,7 +113,6 @@ items:
       app: auto-scale
     name: auto-scale
     namespace: test-jenkins
-    resourceVersion: "1674019"
     selfLink: /oapi/v1/namespaces/test-jenkins/routes/auto-scale
     uid: 1dd37317-9cac-11e6-aaf3-fa163e01bb5f
   spec:
@@ -133,14 +123,6 @@ items:
       kind: Service
       name: auto-scale
       weight: 100
-  status:
-    ingress:
-    - conditions:
-      - lastTransitionTime: 2016-10-28T01:16:13Z
-        status: "True"
-        type: Admitted
-      host: auto-scale-test-jenkins.oscp.nilanet.com
-      routerName: router
 - apiVersion: v1
   kind: Service
   metadata:
@@ -151,7 +133,6 @@ items:
       app: auto-scale
     name: auto-scale
     namespace: test-jenkins
-    resourceVersion: "1674016"
     selfLink: /api/v1/namespaces/test-jenkins/services/auto-scale
     uid: 1dd1715b-9cac-11e6-aaf3-fa163e01bb5f
   spec:
@@ -164,7 +145,5 @@ items:
       deploymentconfig: auto-scale
     sessionAffinity: None
     type: ClusterIP
-  status:
-    loadBalancer: {}
 kind: List
 metadata: {}

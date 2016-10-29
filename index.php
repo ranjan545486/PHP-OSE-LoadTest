@@ -35,9 +35,9 @@ $time_end = microtime_float();
 $e_time = $time_end - $time_st;
 $hostname = gethostname();
 $hostip = $_SERVER['SERVER_ADDR'];
+echo "<h2>This is version v1! </h2>";
 echo "<h2>Server/Host name: $hostname</h2>";
 echo "<h2>Server/Host IP: $hostip</h2>";
-echo "<h3>This is just a test!!</h3>";
 echo "<h2>Elapsed time: $e_time (Seconds)</h2>";
 ?>   
 
